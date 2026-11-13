@@ -116,7 +116,7 @@ class LabelsOverlay(context: Context, private val renderer: SkyRenderer) : View(
         canvas.translate(it.x, it.y)
         canvas.rotate(sunAngle)   // local +x now points at the sun
         // terminator ellipse semi-axis: |cos(i)| = |2p - 1|, signed a = r(2p-1)
-        val a = (r * (2.0 * it.phase - 1.0)).toFloat()
+        val a = (r.toDouble() * (2.0 * it.phase - 1.0)).toFloat()
         val path = Path()
         path.moveTo(0f, -r)
         if (it.waxing) {
