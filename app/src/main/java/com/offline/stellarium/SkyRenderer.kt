@@ -156,9 +156,10 @@ class SkyRenderer(private val context: Context) : GLSurfaceView.Renderer {
             GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT)
         }
 
+
         GLES20.glEnable(GLES20.GL_BLEND)
         GLES20.glBlendFunc(GLES20.GL_SRC_ALPHA, GLES20.GL_ONE_MINUS_SRC_ALPHA)
-        GLES20.glEnable(GLES20.GL_PROGRAM_POINT_SIZE)
+        GLES20.glEnable(GLES20.GL_VERTEX_PROGRAM_POINT_SIZE)
 
         drawStarBuffer(catalog.mwBuffer, catalog.mwCount, lst, latR, starAlpha * 0.30, 0.55f, 8f)
         drawStarBuffer(catalog.starBuffer, catalog.starCount, lst, latR, starAlpha, 1f, SkyState.magLimit)
