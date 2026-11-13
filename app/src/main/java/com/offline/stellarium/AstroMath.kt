@@ -98,14 +98,14 @@ object AstroMath {
         val Dm = rev(Lm - Ls)
         val F = rev(Lm - N)
         fun s(x: Double) = sin(x * D2R)
-        lon += -1.274 * s(M - 2 * Dm) + 0.658 * s(2 * Dm) - 0.186 * s(Ms)
-             - 0.059 * s(2 * M - 2 * Dm) - 0.057 * s(M - 2 * Dm + Ms)
-             + 0.053 * s(M + 2 * Dm) + 0.046 * s(2 * Dm - Ms)
+        lon += -1.274 * s(M - 2.0 * Dm) + 0.658 * s(2.0 * Dm) - 0.186 * s(Ms)
+             - 0.059 * s(2.0 * M - 2.0 * Dm) - 0.057 * s(M - 2.0 * Dm + Ms)
+             + 0.053 * s(M + 2.0 * Dm) + 0.046 * s(2.0 * Dm - Ms)
              + 0.041 * s(M - Ms) - 0.035 * s(Dm) - 0.031 * s(M + Ms)
-             - 0.015 * s(2 * F - 2 * Dm) + 0.011 * s(M - 4 * Dm)
-        lat += -0.173 * s(F - 2 * Dm) - 0.055 * s(M - F - 2 * Dm)
-             - 0.046 * s(M + F - 2 * Dm) + 0.033 * s(F + 2 * Dm) + 0.017 * s(2 * M + F)
-        val rm = r0 - 0.58 * cos((M - 2 * Dm) * D2R) - 0.46 * cos(2 * Dm * D2R)
+             - 0.015 * s(2.0 * F - 2.0 * Dm) + 0.011 * s(M - 4.0 * Dm)
+        lat += -0.173 * s(F - 2.0 * Dm) - 0.055 * s(M - F - 2.0 * Dm)
+             - 0.046 * s(M + F - 2.0 * Dm) + 0.033 * s(F + 2.0 * Dm) + 0.017 * s(2.0 * M + F)
+        val rm = r0 - 0.58 * cos((M - 2.0 * Dm) * D2R) - 0.46 * cos(2.0 * Dm * D2R)
         val lonR = rev(lon) * D2R
         val latR = lat * D2R
         val x = rm * cos(latR) * cos(lonR)
@@ -165,14 +165,14 @@ object AstroMath {
         fun s(x: Double) = sin(x * D2R)
         fun c(x: Double) = cos(x * D2R)
         when (idx) {
-            4 -> lon += -0.332 * s(2 * Mj - 5 * Ms - 67.6) - 0.056 * s(2 * Mj - 2 * Ms + 21)
-                 + 0.042 * s(3 * Mj - 5 * Ms + 21) - 0.036 * s(Mj - 2 * Ms)
-                 + 0.022 * c(Mj - Ms) + 0.023 * s(2 * Mj - 3 * Ms + 52) - 0.016 * s(Mj - 5 * Ms - 69)
-            5 -> { lon += 0.812 * s(2 * Mj - 5 * Ms - 67.6) - 0.229 * c(2 * Mj - 4 * Ms - 2)
-                 + 0.119 * s(Mj - 2 * Ms - 3) + 0.046 * s(2 * Mj - 6 * Ms - 69)
-                 + 0.014 * s(Mj - 3 * Ms + 32)
-                 lat += -0.020 * c(2 * Mj - 4 * Ms - 2) + 0.018 * s(2 * Mj - 6 * Ms - 49) }
-            6 -> lon += -0.004 * s(Ms - 2 * Mu + 115.2) + 0.005 * s(2 * Ms - 3 * Mu + 322.1)
+            4 -> lon += -0.332 * s(2.0 * Mj - 5.0 * Ms - 67.6) - 0.056 * s(2.0 * Mj - 2.0 * Ms + 21.0)
+                 + 0.042 * s(3.0 * Mj - 5.0 * Ms + 21.0) - 0.036 * s(Mj - 2.0 * Ms)
+                 + 0.022 * c(Mj - Ms) + 0.023 * s(2.0 * Mj - 3.0 * Ms + 52.0) - 0.016 * s(Mj - 5.0 * Ms - 69.0)
+            5 -> { lon += 0.812 * s(2.0 * Mj - 5.0 * Ms - 67.6) - 0.229 * c(2.0 * Mj - 4.0 * Ms - 2.0)
+                 + 0.119 * s(Mj - 2.0 * Ms - 3.0) + 0.046 * s(2.0 * Mj - 6.0 * Ms - 69.0)
+                 + 0.014 * s(Mj - 3.0 * Ms + 32.0)
+                 lat += -0.020 * c(2.0 * Mj - 4.0 * Ms - 2.0) + 0.018 * s(2.0 * Mj - 6.0 * Ms - 49.0) }
+            6 -> lon += -0.004 * s(Ms - 2.0 * Mu + 115.2) + 0.005 * s(2.0 * Ms - 3.0 * Mu + 322.1)
         }
         val lonR = rev(lon) * D2R; val latR = lat * D2R
         return doubleArrayOf(r * cos(latR) * cos(lonR), r * cos(latR) * sin(lonR), r * sin(latR))
