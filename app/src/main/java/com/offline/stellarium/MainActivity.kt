@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
 
         // ---- bottom info card ----
         infoTitle = TextView(this).apply {
-            textSize = 18f; setTextColor(Color.WHITE); isFakeBoldText = true
+            textSize = 18f; setTextColor(Color.WHITE); setTypeface(null, android.graphics.Typeface.BOLD)
         }
         infoBody = TextView(this).apply {
             textSize = 14f; setTextColor(0xFFB9C4D6.toInt())
@@ -504,3 +504,6 @@ class MainActivity : AppCompatActivity() {
         savePrefs()
     }
 }
+
+
+
